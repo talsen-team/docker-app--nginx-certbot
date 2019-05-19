@@ -13,7 +13,6 @@
                               "bash-commands--specific/administration--update-configuration.sh",
                               ".",
                               "default.docker-compose",
-                              "server--nginx-certbot",
                               "reverse-proxy.env"
             ],
             "problemMatcher": [ ],
