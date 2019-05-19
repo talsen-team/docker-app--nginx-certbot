@@ -29,4 +29,5 @@
 !docker-compose/server--nginx-certbot/default.docker-compose
 !.gitignore
 !.gitmodules
+!host.env
 !LICENCE
