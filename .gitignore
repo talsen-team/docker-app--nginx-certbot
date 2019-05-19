@@ -5,6 +5,7 @@
 !bash-commands
 !bash-commands--specific/
 !bash-commands--specific/administration--update-configuration.sh
+!bash-util
 !docker/
 !docker/server--nginx-certbot/
 !docker/server--nginx-certbot/default.docker
@@ -23,7 +24,9 @@
 !docker/server--nginx-certbot/rootfs/opt/server--nginx-certbot/test-nginx-configuration.sh
 !docker/server--nginx-certbot/rootfs/templates/
 !docker/server--nginx-certbot/rootfs/templates/vhost.template.conf
-!bash-util
+!docker-compose/
+!docker-compose/server--nginx-certbot/
+!docker-compose/server--nginx-certbot/default.docker-compose
 !.gitignore
 !.gitmodules
 !LICENCE

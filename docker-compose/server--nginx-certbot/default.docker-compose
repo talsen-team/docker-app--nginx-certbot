@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  server--nginx-certbot:
+    build:
+      context:      './../../docker/server--nginx-certbot'
+      dockerfile:   'default.docker'
+    container_name: 'server--nginx-certbot'
+    image:          'talsenteam/docker-nginx-certbot:v1.16.0-alpine'
+    network_mode:   'host'
+    restart:        'no'
+    volumes:
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/../container.env:/etc/nginx/env/reverse-proxy.env:ro'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/cache/:/cache'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/manual-config/:/manual-config:ro'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/etc/letsencrypt/:/etc/letsencrypt'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/var/lib/letsencrypt/:/var/lib/letsencrypt'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/var/log/letsencrypt/:/var/log/letsencrypt'
+      -             '${HOST_PATH_TO_VOLUMES_ROOT}/server--nginx-certbot/var/log/nginx/:/var/log/nginx'
