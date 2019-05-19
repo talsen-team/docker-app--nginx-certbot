@@ -23,7 +23,7 @@ Then open the cloned repository directory with VS Code and use any of the custom
 Any docker-compose--* tasks refer to the default [dockerfile](docker/server--nginx-certbot/default.docker) as well as to the [docker-compose](docker-compose/server--nginx-certbot/default.docker-compose) configuration if required for command execution.
 
 - administration--*
-  - [administration--administration--update-configuration](bash-commands--specific/administration--administration--update-configuration.sh)  
+  - [administration--update-configuration](bash-commands--specific/administration--update-configuration.sh)  
     Updates the NGINX configuration by generating necessary config files and requesting required certificates via certbot.
 - browser--*
   - [browser--open-application-url](//github.com/talsen-team/docker-util--bash-commands/blob/master/browser--open-application-url.sh)  
