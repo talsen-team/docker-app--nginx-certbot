@@ -25,7 +25,7 @@ nginx -t
 
 echo -e "Testing nginx configuration ... \033[0;32mdone\033[0m"
 
-ExportEnvironmentFile "/etc/nginx/env/${1}.env"
+ExportEnvironmentFile "/etc/nginx/env/${1}"
 
 mkdir -p "/etc/letsencrypt/san"
 
@@ -77,10 +77,10 @@ do
       echo "  -> cleaning up certificate storage."
       certbot delete --cert-name "${VAR_DOMAIN}"
     fi
-    /bin/bash /opt/server-nginx-certbot/request-certificate.sh \
-              "${VAR_STAGING}"                                 \
-              "${VAR_STAGING_URL}"                             \
-              "${VAR_EMAIL}"                                   \
+    /bin/bash /opt/server--nginx-certbot/request-certificate.sh \
+              "${VAR_STAGING}"                                  \
+              "${VAR_STAGING_URL}"                              \
+              "${VAR_EMAIL}"                                    \
               "${VAR_DOMAIN}"
                 
     # update san information
