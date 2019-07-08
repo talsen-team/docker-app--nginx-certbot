@@ -3,7 +3,7 @@
 nginx -t
 
 if [ ${?} -eq 0 ];then
-  echo "true"
+    echo "true"
 else
-  echo "false"
+    echo "false"
 fi

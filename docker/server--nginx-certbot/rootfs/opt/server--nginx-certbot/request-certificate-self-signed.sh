@@ -7,7 +7,7 @@ VAR_EMAIL=${2}
 VAR_DOMAIN=${3}
 
 if [ -d /etc/letsencrypt/live/${VAR_DOMAIN} ]; then
-  exit 0
+    exit 0
 fi
 
 mkdir -p /etc/letsencrypt/live/${VAR_DOMAIN}/
