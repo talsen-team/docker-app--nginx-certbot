@@ -1,5 +1,6 @@
 # docker-app: nginx-certbot
 
+![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/talsen-team/docker-app--nginx-cerbot.svg?style=for-the-badge)git@github.com:talsen-team/docker-app--nginx-certbot.git
 [![Docker Automated build](https://img.shields.io/docker/cloud/automated/talsenteam/docker-nginx-certbot.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-nginx-certbot/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/talsenteam/docker-nginx-certbot.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-nginx-certbot/)
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/talsenteam/docker-nginx-certbot.svg?style=for-the-badge)](//hub.docker.com/r/talsenteam/docker-nginx-certbot/)
