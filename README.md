@@ -74,22 +74,22 @@ Any docker-compose--* tasks refer to the default [dockerfile](docker/server--ngi
 
 Call the scripts from the repository root directory ( e.g. `bash bash-ci/command-deploy.sh` ).  
 
-[command-deploy](bash-ci/command-deploy.sh):  
-1. Runs VS Code task `docker-compose--compose--up`
-2. Runs VS Code task `administration--update-configuration`
+- [command-deploy](bash-ci/command-deploy.sh):  
+  1. Runs VS Code task `docker-compose--compose--up`
+  2. Runs VS Code task `administration--update-configuration`
 
-[command-pull-images](bash-ci/command-pull-images.sh):  
-1. Runs VS Code task `docker-compose--image--pull`.  
+- [command-pull-images](bash-ci/command-pull-images.sh):  
+  1. Runs VS Code task `docker-compose--image--pull`.  
 
-[command-purge](bash-ci/command-purge.sh):  
-1. Runs VS Code task `docker-compose--compose--down`.  
+- [command-purge](bash-ci/command-purge.sh):  
+  1. Runs VS Code task `docker-compose--compose--down`.  
 
-[command-upgrade](bash-ci/command-upgrade.sh):  
-1. Runs VS Code task `docker-compose--compose--down`
-2. Deletes the old backup directory `delete.volumes/` if existent
-3. Degrades backup directory `volumes.bak/` to old backup directory `delete.volumes/`
-4. Creates a backup of the `volumes/` directory named `volumes.bak/`
-5. Checks out the latest state of this repository
-6. Runs VS Code task `docker-compose--image--pull`
-7. Runs VS Code task `docker-compose--compose--up`
-8. Runs VS Code task `administration--update-configuration`
+- [command-upgrade](bash-ci/command-upgrade.sh):  
+  1. Runs VS Code task `docker-compose--compose--down`
+  2. Deletes the old backup directory `delete.volumes/` if existent
+  3. Degrades backup directory `volumes.bak/` to old backup directory `delete.volumes/`
+  4. Creates a backup of the `volumes/` directory named `volumes.bak/`
+  5. Checks out the latest state of this repository
+  6. Runs VS Code task `docker-compose--image--pull`
+  7. Runs VS Code task `docker-compose--compose--up`
+  8. Runs VS Code task `administration--update-configuration`
