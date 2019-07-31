@@ -72,6 +72,8 @@ Any docker-compose--* tasks refer to the default [dockerfile](docker/server--ngi
 
 ## custom scripts for interaction via terminal / in non-interactive mode
 
+Call the scripts from the repository root directory ( e.g. `bash bash-ci/command-deploy.sh` ).  
+
 [command-deploy](bash-ci/command-deploy.sh):  
 1. Runs VS Code task `docker-compose--compose--up`
 2. Runs VS Code task `administration--update-configuration`
