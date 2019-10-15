@@ -51,10 +51,8 @@ do
   if [ "${VAR_STAGING}" = "self-signed" ]; then
     VAR_STAGING_URL=""
   elif [ "${VAR_STAGING}" = "none" ]; then
-    VAR_STAGING_URL=""
-  elif [ "${VAR_STAGING}" = "level-1" ]; then
-    VAR_STAGING_URL="--server https://acme-staging.api.letsencrypt.org/directory"
-  elif [ "${VAR_STAGING}" = "level-2" ]; then
+    VAR_STAGING_URL="--server https://acme-v02.api.letsencrypt.org/directory"
+  elif [ "${VAR_STAGING}" = "staging" ]; then
     VAR_STAGING_URL="--server https://acme-staging-v02.api.letsencrypt.org/directory"
   fi
 
