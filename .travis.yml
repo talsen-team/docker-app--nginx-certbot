@@ -7,7 +7,7 @@ services:
 
 branches:
   only:
-    - master
+    - reimplementation
 
 sudo: required
 
