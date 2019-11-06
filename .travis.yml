@@ -1,0 +1,26 @@
+dist: bionic
+
+language: minimal
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+sudo: required
+
+before_install:
+  - sudo apt-get update && sudo apt-get install --no-install-recommends --yes build-essential python3 python3-pip python3-setuptools
+  - pip3 install --upgrade --user setuptools
+  - pip3 install --upgrade --user wheel
+
+install:
+  - pip3 install --user ansible docker==3.7.3 molecule requests==2.20.1
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - whomai
