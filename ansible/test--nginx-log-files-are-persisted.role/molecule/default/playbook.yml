@@ -1,0 +1,11 @@
+---
+- name: converge
+  hosts: localhost
+  connection: local
+  roles:
+    - {
+      role: "{{ lookup('env','ROLE_NAME') }}",
+      system_user: "{{ lookup('env','USER') }}"
+    }
+  vars:
+    ansible_python_interpreter: /usr/bin/python3

@@ -1,5 +1,16 @@
 *
 
+!ansible/
+!ansible/test--*/
+!ansible/test--*/molecule/
+!ansible/test--*/molecule/default/
+!ansible/test--*/molecule/default/molecule.yml
+!ansible/test--*/molecule/default/playbook.yml
+!bash/
+!bash/ansible/
+!bash/ansible/run-test.bash
+!bash/util/
+!bash/util/functions.bash
 !.gitignore
 !.travis.yml
 !LICENCE
