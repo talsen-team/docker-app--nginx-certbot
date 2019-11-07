@@ -15,6 +15,8 @@
   with_items:
     - path: "{{ test_dir }}"
     - path: "{{ test_dir }}/bash/docker/image"
+    - path: "{{ test_dir }}/bash/util"
+    - path: "{{ test_dir }}/docker/127.0.0.1:80"
     - path: "{{ test_dir }}/env/127.0.0.1:80"
 
 - name: copy_required_files
@@ -25,5 +27,8 @@
     src: "{{ project_dir }}/{{ item.name }}"
   with_items:
     - name: bash/docker/image/build.bash
+    - name: bash/util/functions.bash
+    - name: docker/127.0.0.1:80/default.docker
+    - name: docker/127.0.0.1:80/default.docker-compose
     - name: env/127.0.0.1:80/docker-images.env
   notify: execute_command
