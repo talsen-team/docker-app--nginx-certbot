@@ -21,6 +21,8 @@
 !bash/ansible/
 !bash/ansible/run-test.bash
 !bash/docker/
+!bash/docker/compose/
+!bash/docker/compose/up.bash
 !bash/docker/image/
 !bash/docker/image/build.bash
 !bash/util/
