@@ -54,12 +54,15 @@ function run() {
         ${SHOULD_PRUNE}
     done
 
+    local HAS_ANY_TEST_FAILED="false"
+
     print_title \
     "Printing summary"
     for TEST in ${TESTS[@]}
     do
         if [ -f ${CACHE_DIR}/${TEST}.fail ];
         then
+            HAS_ANY_TEST_FAILED="true"
             print_h1_error \
             "Test '${TEST}'"
         else
@@ -69,6 +72,14 @@ function run() {
     done
     print_title_done \
     "Printing summary"
+
+    rm --force \
+    ${CACHE_DIR}/*
+
+    if [ "${HAS_ANY_TEST_FAILED}" = "true" ];
+    then
+        exit 1
+    fi
 }
 
 run ${@}
