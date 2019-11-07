@@ -9,6 +9,7 @@ function run_test() {
 
     export ROLE_NAME=test--${TEST_NAME}.role
     export PROJECT_DIR=$( realpath . )
+    export ANSIBLE_COMMON_DIR=${PROJECT_DIR}/ansible/common
     export TESTS_DIR=${PROJECT_DIR}/tests
 
     print_title \

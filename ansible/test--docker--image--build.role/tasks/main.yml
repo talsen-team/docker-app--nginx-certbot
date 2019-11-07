@@ -1,4 +1,4 @@
 ---
-- include: ./../../common/tasks/set-facts.yml
-- include: ./../../common/tasks/prepare-required-directories.yml
-- include: ./../../common/tasks/copy-required-files.yml
+- include: "{{ lookup('env','ANSIBLE_COMMON_DIR') }}/tasks/set-facts.yml"
+- include: "{{ lookup('env','ANSIBLE_COMMON_DIR') }}/tasks/prepare-required-directories.yml"
+- include: "{{ lookup('env','ANSIBLE_COMMON_DIR') }}/tasks/copy-required-files.yml"
