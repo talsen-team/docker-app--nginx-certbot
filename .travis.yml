@@ -23,5 +23,4 @@ jobs:
   include:
     - stage: test
       script:
-        - /bin/bash bash/ansible/run-test.bash docker--compose--up && docker system prune --all --force
-        - /bin/bash bash/ansible/run-test.bash docker--image--build && docker system prune --all --force
+        - /bin/bash bash/ansible/run-tests.bash prune-between-tests
