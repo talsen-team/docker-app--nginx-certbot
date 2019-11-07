@@ -16,7 +16,6 @@ function export_env_docker_images() {
 }
 
 function run() {
-
     local CONFIGURATION=${1}
     local DOCKER_CONFIG_DIR=docker/${CONFIGURATION}
 

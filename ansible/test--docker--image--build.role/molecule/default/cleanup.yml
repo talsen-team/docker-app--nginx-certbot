@@ -9,6 +9,19 @@
         project_dir: "{{ lookup('env','PROJECT_DIR') }}"
         tests_dir: "{{ lookup('env','TESTS_DIR') }}"
         test_dir: "{{ lookup('env','TESTS_DIR') }}/{{ lookup('env','ROLE_NAME') }}"
+    - name: re_tag_built_docker_images
+      docker_image:
+        force_tag: true
+        name: talsenteam/docker-nginx-certbot:v1.17.4
+        repository: talsenteam/docker-nginx-certbot:v1.17.4-cache
+        source: local
+      ignore_errors: true
+    - name: un_tag_built_docker_images
+      docker_image:
+        name: talsenteam/docker-nginx-certbot
+        state: absent
+        tag: v1.17.4
+      ignore_errors: true
     - name: remove_test_directory
       file:
         path: "{{ test_dir }}"

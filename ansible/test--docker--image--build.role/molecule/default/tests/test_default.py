@@ -24,9 +24,7 @@ def test_that_required_files_are_existing(host, name):
 
 
 def test_that_required_docker_image_exists(host):
-    x = host.run('cat ' + test_dir + '/env/127.0.0.1:80/docker-images.env')  # noqa: #501
-
-    expected_image_name = x.stdout.splitlines()[0].split('=', 2)[1]
+    expected_image_name = 'talsenteam/docker-nginx-certbot:v1.17.4'
 
     c = host.run('docker images ' + expected_image_name + ' --format "{{.Repository}}:{{.Tag}}"')  # noqa: #501
 
