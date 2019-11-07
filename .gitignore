@@ -4,6 +4,8 @@
 !ansible/test--*/
 !ansible/test--*/molecule/
 !ansible/test--*/molecule/default/
+!ansible/test--*/molecule/default/tests/
+!ansible/test--*/molecule/default/tests/test_default.py
 !ansible/test--*/molecule/default/molecule.yml
 !ansible/test--*/molecule/default/playbook.yml
 !bash/

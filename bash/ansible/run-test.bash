@@ -12,6 +12,7 @@ function run_test() {
     local TESTS_DIR=${PROJECT_DIR}/tests
 
     export ROLE_NAME
+    export TESTS_DIR
 
     print_title \
     "Running test '${TEST_NAME}'"
