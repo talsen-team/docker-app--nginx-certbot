@@ -1,10 +1,1 @@
-FROM alpine:3.10.3
-
-RUN apk add --no-cache \
-    nginx \
- && mkdir --parents \
-    /run/nginx
-
-VOLUME /var/log/nginx
-
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+FROM nginx:1.17.5-alpine
