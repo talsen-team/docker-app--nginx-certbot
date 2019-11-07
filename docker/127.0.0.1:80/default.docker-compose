@@ -1,0 +1,8 @@
+version:          '3'
+
+services:
+  nginx-certbot:
+    build:
+      context:    '.'
+      dockerfile: 'default.docker'
+    image:        '${DOCKER_IMAGE_NGINX_CERTBOT}'

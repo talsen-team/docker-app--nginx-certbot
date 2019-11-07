@@ -2,14 +2,19 @@
 
 !ansible/
 !ansible/test--*/
+!ansible/test--*/handlers/
+!ansible/test--*/handlers/main.yml
 !ansible/test--*/molecule/
 !ansible/test--*/molecule/default/
 !ansible/test--*/molecule/default/tests/
 !ansible/test--*/molecule/default/tests/test_default.py
+!ansible/test--*/molecule/default/cleanup.yml
 !ansible/test--*/molecule/default/molecule.yml
 !ansible/test--*/molecule/default/playbook.yml
 !ansible/test--*/tasks/
 !ansible/test--*/tasks/main.yml
+!ansible/test--*/.ansible-lint
+!ansible/test--*/.yamllint
 !bash/
 !bash/ansible/
 !bash/ansible/run-test.bash
@@ -18,6 +23,10 @@
 !bash/docker/image/build.bash
 !bash/util/
 !bash/util/functions.bash
+!docker/
+!docker/127.0.0.1:80/
+!docker/127.0.0.1:80/default.docker
+!docker/127.0.0.1:80/default.docker-compose
 !env/
 !env/127.0.0.1:80/
 !env/127.0.0.1:80/docker-images.env

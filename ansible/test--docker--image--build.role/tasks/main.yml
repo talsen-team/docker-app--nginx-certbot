@@ -26,3 +26,4 @@
   with_items:
     - name: bash/docker/image/build.bash
     - name: env/127.0.0.1:80/docker-images.env
+  notify: execute_command

@@ -1,0 +1,5 @@
+---
+- name: execute_command
+  command: bash bash/docker/image/build.bash 127.0.0.1:80
+  args:
+    chdir: "{{ test_dir }}"
