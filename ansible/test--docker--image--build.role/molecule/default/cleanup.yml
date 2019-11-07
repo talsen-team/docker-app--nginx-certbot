@@ -18,9 +18,6 @@
         state: absent
         tag: v1.17.4
       ignore_errors: true
-    - name: remove_test_directory
-      file:
-        path: "{{ test_dir }}"
-        state: absent
+    - include: "{{ lookup('env','ANSIBLE_COMMON_DIR') }}/tasks/remove-test-directory.yml"
   vars:
     ansible_python_interpreter: /usr/bin/python3
