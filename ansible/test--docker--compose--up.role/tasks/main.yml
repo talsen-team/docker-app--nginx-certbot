@@ -1,18 +1,4 @@
 ---
 - include: ./../../common/tasks/set-facts.yml
 - include: ./../../common/tasks/prepare-required-directories.yml
-
-- name: copy_required_files
-  copy:
-    dest: "{{ test_dir }}/{{ item.name }}"
-    mode: 0o600
-    remote_src: true
-    src: "{{ project_dir }}/{{ item.name }}"
-  with_items:
-    - name: bash/docker/compose/up.bash
-    - name: bash/util/functions.bash
-    - name: docker/{{ configuration }}/default.docker
-    - name: docker/{{ configuration }}/default.docker-compose
-    - name: env/{{ configuration }}/docker-containers.env
-    - name: env/{{ configuration }}/docker-images.env
-  notify: execute_command
+- include: ./../../common/tasks/copy-required-files.yml

@@ -3,6 +3,7 @@
 !ansible/
 !ansible/common/
 !ansible/common/tasks/
+!ansible/common/tasks/copy-required-files.yml
 !ansible/common/tasks/prepare-required-directories.yml
 !ansible/common/tasks/set-facts.yml
 !ansible/test--*/
