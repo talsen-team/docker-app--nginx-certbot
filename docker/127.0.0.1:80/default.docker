@@ -1,3 +1,10 @@
 FROM alpine:3.10.3
 
-ENTRYPOINT [ "/bin/sleep", "10000" ]
+RUN apk add --no-cache \
+    nginx \
+ && mkdir --parents \
+    /run/nginx
+
+VOLUME /var/log/nginx
+
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

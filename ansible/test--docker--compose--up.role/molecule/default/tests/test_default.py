@@ -18,10 +18,11 @@ def test_that_required_docker_containers_are_running(host):
 
 
 @pytest.mark.parametrize('path', [
-    f'{test_dir}/volumes/{expected_container_name}/var/log/nginx',
+    f'{test_dir}/volumes/{expected_container_name}/var/log/nginx/access.log',
+    f'{test_dir}/volumes/{expected_container_name}/var/log/nginx/error.log',
 ])
-def test_that_required_directories_exist(host, path):
+def test_that_required_files_exist(host, path):
     f = host.file(path)
 
     assert f.exists
-    assert f.is_directory
+    assert not f.is_directory
