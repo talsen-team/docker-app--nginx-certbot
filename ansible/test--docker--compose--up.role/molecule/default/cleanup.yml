@@ -4,11 +4,7 @@
   connection: local
   gather_facts: false
   tasks:
-    - name: set_facts
-      set_fact:
-        project_dir: "{{ lookup('env','PROJECT_DIR') }}"
-        tests_dir: "{{ lookup('env','TESTS_DIR') }}"
-        test_dir: "{{ lookup('env','TESTS_DIR') }}/{{ lookup('env','ROLE_NAME') }}"
+    - include: "{{ lookup('env','ANSIBLE_COMMON_DIR') }}/tasks/set-facts.yml"
     - name: remove_running_docker_container
       docker_container:
         name: server--nginx-certbot
