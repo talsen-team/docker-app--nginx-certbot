@@ -1,9 +1,5 @@
 ---
-- name: set_facts
-  set_fact:
-    project_dir: "{{ lookup('env','PROJECT_DIR') }}"
-    tests_dir: "{{ lookup('env','TESTS_DIR') }}"
-    test_dir: "{{ lookup('env','TESTS_DIR') }}/{{ lookup('env','ROLE_NAME') }}"
+- include: ./../../common/tasks/set-facts.yml
 
 - name: prepare_required_directories
   file:

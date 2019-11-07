@@ -1,6 +1,9 @@
 *
 
 !ansible/
+!ansible/common/
+!ansible/common/tasks/
+!ansible/common/tasks/set-facts.yml
 !ansible/test--*/
 !ansible/test--*/defaults/
 !ansible/test--*/defaults/main.yml
