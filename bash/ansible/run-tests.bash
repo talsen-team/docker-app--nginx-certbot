@@ -26,19 +26,49 @@ function run() {
                   docker--compose--up \
                   docker--image--build \
                 )
+    local CACHE_DIR=cache
     local SHOULD_PRUNE=
     set +u
     [[ "${1}" = "prune-between-tests" ]] && SHOULD_PRUNE=1 || SHOULD_PRUNE=0
     set -u
 
+    mkdir --parents \
+    ${CACHE_DIR}
+    rm --force \
+    ${CACHE_DIR}/*
+
     for TEST in ${TESTS[@]}
     do
+        set +e
         /bin/bash bash/ansible/run-test.bash \
         ${TEST}
+        local TEST_RC=${?}
+        set -e
+
+        if [ ${TEST_RC} != 0 ];
+        then
+            touch ${CACHE_DIR}/${TEST}.fail
+        fi
 
         prune \
         ${SHOULD_PRUNE}
     done
+
+    print_title \
+    "Printing summary"
+    for TEST in ${TESTS[@]}
+    do
+        if [ -f ${CACHE_DIR}/${TEST}.fail ];
+        then
+            print_h1_error \
+            "Test '${TEST}'"
+        else
+            print_h1_done \
+            "Test '${TEST}'"
+        fi
+    done
+    print_title_done \
+    "Printing summary"
 }
 
 run ${@}
