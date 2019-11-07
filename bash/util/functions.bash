@@ -1,5 +1,17 @@
 #!/bin/bash
 
+function export_environment_for_configuration() {
+    local CONFIGURATION=${1}
+
+    for FILE in $( find env/${CONFIGURATION} -name *.env -type f -print | sort )
+    do
+        while IFS='' read -r LINE || [[ -n ${LINE} ]];
+        do
+            export ${LINE}
+        done < ${FILE}
+    done
+}
+
 function __done() {
     echo "\033[0;32mdone\033[0m"
 }

@@ -34,6 +34,7 @@
 !docker/127.0.0.1:80/default.docker-compose
 !env/
 !env/127.0.0.1:80/
+!env/127.0.0.1:80/docker-containers.env
 !env/127.0.0.1:80/docker-images.env
 !.gitignore
 !.travis.yml
