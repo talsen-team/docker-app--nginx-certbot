@@ -3,6 +3,12 @@
 function export_environment_for_configuration() {
     local CONFIGURATION=${1}
 
+    print_title \
+    "Prepare local environment for '${CONFIGURATION}'"
+
+    export PROJECT_DIR=$( realpath . )
+    export VOLUMES_DIR=${PROJECT_DIR}/volumes
+
     for FILE in $( find env/${CONFIGURATION} -name *.env -type f -print | sort )
     do
         while IFS='' read -r LINE || [[ -n ${LINE} ]];
@@ -10,6 +16,9 @@ function export_environment_for_configuration() {
             export ${LINE}
         done < ${FILE}
     done
+
+    print_title_done \
+    "Prepare local environment for '${CONFIGURATION}'"
 }
 
 function __done() {

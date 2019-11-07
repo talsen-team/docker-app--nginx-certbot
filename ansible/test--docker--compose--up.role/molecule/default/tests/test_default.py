@@ -1,3 +1,4 @@
+import pytest
 import os
 
 import testinfra.utils.ansible_runner
@@ -14,3 +15,13 @@ def test_that_required_docker_containers_are_running(host):
     c = host.run('docker ps --format "{{.Names}}"')  # noqa: #501
 
     assert expected_container_name + '\n' == c.stdout
+
+
+@pytest.mark.parametrize('path', [
+    f'{test_dir}/volumes/{expected_container_name}/var/log/nginx',
+])
+def test_that_required_directories_exist(host, path):
+    f = host.file(path)
+
+    assert f.exists
+    assert f.is_directory

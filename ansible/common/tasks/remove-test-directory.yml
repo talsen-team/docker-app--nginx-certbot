@@ -1,5 +1,6 @@
 ---
 - name: remove_test_directory
+  become: true
   file:
     path: "{{ test_dir }}"
     state: absent

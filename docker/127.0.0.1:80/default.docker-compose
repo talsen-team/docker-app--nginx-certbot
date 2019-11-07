@@ -7,3 +7,5 @@ services:
       dockerfile:   'default.docker'
     container_name: '${DOCKER_CONTAINER_NGINX_CERTBOT}'
     image:          '${DOCKER_IMAGE_NGINX_CERTBOT}'
+    volumes:
+      -             '${VOLUMES_DIR}/${DOCKER_CONTAINER_NGINX_CERTBOT}/var/log/nginx:/var/log/nginx'

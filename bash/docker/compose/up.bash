@@ -4,8 +4,6 @@ set -euo pipefail
 
 source bash/util/functions.bash
 
-PROJECT_DIR=$( realpath . )
-
 function run() {
     local CONFIGURATION=${1}
     local DOCKER_CONFIG_DIR=docker/${CONFIGURATION}
