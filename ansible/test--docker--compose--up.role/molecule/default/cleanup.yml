@@ -9,6 +9,10 @@
         project_dir: "{{ lookup('env','PROJECT_DIR') }}"
         tests_dir: "{{ lookup('env','TESTS_DIR') }}"
         test_dir: "{{ lookup('env','TESTS_DIR') }}/{{ lookup('env','ROLE_NAME') }}"
+    - name: remove_running_docker_container
+      docker_container:
+        name: server--nginx-certbot
+        state: absent
     - name: remove_test_directory
       file:
         path: "{{ test_dir }}"
