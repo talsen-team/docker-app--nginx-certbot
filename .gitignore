@@ -18,6 +18,9 @@
 !bash/docker/image/build.bash
 !bash/util/
 !bash/util/functions.bash
+!env/
+!env/127.0.0.1:80/
+!env/127.0.0.1:80/docker-images.env
 !.gitignore
 !.travis.yml
 !LICENCE

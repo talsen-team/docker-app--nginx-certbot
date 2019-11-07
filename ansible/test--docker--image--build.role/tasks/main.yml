@@ -15,6 +15,7 @@
   with_items:
     - path: "{{ test_dir }}"
     - path: "{{ test_dir }}/bash/docker/image"
+    - path: "{{ test_dir }}/env/127.0.0.1:80"
 
 - name: copy_required_files
   copy:
@@ -24,3 +25,4 @@
     src: "{{ project_dir }}/{{ item.name }}"
   with_items:
     - name: bash/docker/image/build.bash
+    - name: env/127.0.0.1:80/docker-images.env
