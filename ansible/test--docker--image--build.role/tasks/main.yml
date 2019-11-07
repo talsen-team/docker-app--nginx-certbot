@@ -1,0 +1,26 @@
+---
+- name: set_facts
+  set_fact:
+    project_dir: "{{ lookup('env','PROJECT_DIR') }}"
+    tests_dir: "{{ lookup('env','TESTS_DIR') }}"
+    test_dir: "{{ lookup('env','TESTS_DIR') }}/{{ lookup('env','ROLE_NAME') }}"
+
+- name: prepare_required_directories
+  file:
+    group: "{{ system_user }}"
+    mode: 0o700
+    owner: "{{ system_user }}"
+    path: "{{ item.path }}"
+    state: directory
+  with_items:
+    - path: "{{ test_dir }}"
+    - path: "{{ test_dir }}/bash/docker/image"
+
+- name: copy_required_files
+  copy:
+    dest: "{{ test_dir }}/{{ item.name }}"
+    mode: 0o600
+    remote_src: true
+    src: "{{ project_dir }}/{{ item.name }}"
+  with_items:
+    - name: bash/docker/image/build.bash

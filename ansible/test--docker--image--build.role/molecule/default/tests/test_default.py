@@ -6,11 +6,11 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-test_dir = os.environ['TESTS_DIR'] + '/test--docker-compose--compose--create'  # noqa: #501
+test_dir = os.environ['TESTS_DIR'] + '/' + os.environ['ROLE_NAME']  # noqa: #501
 
 
 @pytest.mark.parametrize('name', [
-    '',
+    '/bash/docker/image/build.bash',
 ])
 def test_that_required_files_are_existing(host, name):
 

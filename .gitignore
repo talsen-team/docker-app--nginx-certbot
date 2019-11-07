@@ -8,9 +8,14 @@
 !ansible/test--*/molecule/default/tests/test_default.py
 !ansible/test--*/molecule/default/molecule.yml
 !ansible/test--*/molecule/default/playbook.yml
+!ansible/test--*/tasks/
+!ansible/test--*/tasks/main.yml
 !bash/
 !bash/ansible/
 !bash/ansible/run-test.bash
+!bash/docker/
+!bash/docker/image/
+!bash/docker/image/build.bash
 !bash/util/
 !bash/util/functions.bash
 !.gitignore

@@ -7,12 +7,9 @@ source bash/util/functions.bash
 function run_test() {
     local TEST_NAME=${1}
 
-    local ROLE_NAME=test--${TEST_NAME}.role
-    local PROJECT_DIR=$( realpath . )
-    local TESTS_DIR=${PROJECT_DIR}/tests
-
-    export ROLE_NAME
-    export TESTS_DIR
+    export ROLE_NAME=test--${TEST_NAME}.role
+    export PROJECT_DIR=$( realpath . )
+    export TESTS_DIR=${PROJECT_DIR}/tests
 
     print_title \
     "Running test '${TEST_NAME}'"
