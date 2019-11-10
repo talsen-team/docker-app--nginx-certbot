@@ -18,6 +18,7 @@ def test_that_required_docker_containers_are_running(host):
 
 
 @pytest.mark.parametrize('path', [
+    f'{test_dir}/volumes/{expected_container_name}/var/log/backbone/entry/entry.log',  # noqa: #501
     f'{test_dir}/volumes/{expected_container_name}/var/log/nginx/access.log',
     f'{test_dir}/volumes/{expected_container_name}/var/log/nginx/error.log',
 ])

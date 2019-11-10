@@ -1,1 +1,11 @@
 FROM nginx:1.17.5-alpine
+
+RUN apk add --no-cache \
+            bash
+
+COPY rootfs /
+
+VOLUME /var/log/backbone
+VOLUME /var/log/nginx
+
+ENTRYPOINT [ "/bin/bash", "/docker/backbone/entry-cascade.bash" ]

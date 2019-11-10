@@ -7,9 +7,9 @@
     path: "{{ item.path }}"
     state: directory
   with_items:
-    - path: "{{ test_dir }}"
     - path: "{{ test_dir }}/bash/docker/compose"
     - path: "{{ test_dir }}/bash/docker/image"
     - path: "{{ test_dir }}/bash/util"
-    - path: "{{ test_dir }}/docker/{{ configuration }}"
+    - path: "{{ test_dir }}/docker/{{ configuration }}/rootfs/docker/backbone/0001"
+    - path: "{{ test_dir }}/docker/{{ configuration }}/rootfs/docker/util"
     - path: "{{ test_dir }}/env/{{ configuration }}"

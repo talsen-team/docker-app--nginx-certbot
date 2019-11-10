@@ -36,6 +36,9 @@
 !bash/util/functions.bash
 !docker/
 !docker/127.0.0.1:80/
+!docker/127.0.0.1:80/rootfs/
+!docker/127.0.0.1:80/rootfs/**/
+!docker/127.0.0.1:80/rootfs/**/*.bash
 !docker/127.0.0.1:80/default.docker
 !docker/127.0.0.1:80/default.docker-compose
 !env/
