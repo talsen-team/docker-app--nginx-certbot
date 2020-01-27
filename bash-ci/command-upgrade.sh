@@ -85,7 +85,7 @@ function checkout_latest_repository_state() {
 function deploy_docker_services() {
     echo -E " * Deploying docker services ..."
 
-    /bin/bash bash-gitlab-ci/command-deploy.sh
+    /bin/bash bash-ci/command-deploy.sh
     /bin/bash bash-commands--specific/administration--update-configuration.sh ".." "default.docker-compose" "reverse-proxy.env"
 
     echo -e " * Deploying docker services ... \033[0;32mdone\033[0m"
@@ -94,7 +94,7 @@ function deploy_docker_services() {
 function purge_docker_services() {
     echo -E " * Purging docker services ..."
 
-    /bin/bash bash-gitlab-ci/command-purge.sh
+    /bin/bash bash-ci/command-purge.sh
 
     echo -e " * Purging docker services ... \033[0;32mdone\033[0m"
 }
@@ -102,7 +102,7 @@ function purge_docker_services() {
 function pull_docker_images() {
     echo -E " * Pulling docker images ..."
 
-    /bin/bash bash-gitlab-ci/command-pull-images.sh
+    /bin/bash bash-ci/command-pull-images.sh
 
     echo -e " * Pulling docker images ... \033[0;32mdone\033[0m"
 }
