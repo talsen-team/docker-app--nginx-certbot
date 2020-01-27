@@ -4,6 +4,8 @@ set -euo pipefail
 
 source bash-util/functions.sh
 
+/bin/bash bash-ci/command-pull-images.sh
+
 function wait_for_dh_params_creation() {
     echo " * Waiting for dh params creation ..."
 
