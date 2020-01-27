@@ -86,7 +86,7 @@ function deploy_docker_services() {
     echo -E " * Deploying docker services ..."
 
     /bin/bash bash-ci/command-deploy.sh
-    /bin/bash bash-commands--specific/administration--update-configuration.sh ".." "default.docker-compose" "reverse-proxy.env"
+    /bin/bash bash-commands--specific/administration--update-configuration.sh "." "default.docker-compose" "reverse-proxy.env"
 
     echo -e " * Deploying docker services ... \033[0;32mdone\033[0m"
 }

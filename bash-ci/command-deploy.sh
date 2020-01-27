@@ -7,7 +7,7 @@ source bash-util/functions.sh
 function wait_for_dh_params_creation() {
     echo " * Waiting for dh params creation ..."
 
-    while [ ! -f "volumes/server--nginx-certbot/cache/dhparams.pem" ];
+    while [ ! -f "volumes/server--nginx-certbot/cache/dhparams.pem" ] || [ "$( cat volumes/server--nginx-certbot/cache/dhparams.pem )" = "" ];
     do
         echo " > Waiting ..."
         sleep 1
