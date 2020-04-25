@@ -1,3 +1,22 @@
+# Question: Running Theia web on non-root url path.
+
+For pre-requisites take a look at [how to use](#how-to-use).
+
+Clone this repository anywhere via:  
+```git clone --recurse-submodules --branch=question-theia-non-root-url https://github.com/talsen-team/docker-app--nginx-certbot.git```  
+Open the repository with VS Code:  
+```code docker-app--nginx-certbot```  
+Run the command ```docker-compose--compose--up``` via VS Code and wait for the ```volumes/proxy/cache/dhparams.pem``` file being generated (instead also the terminal command ```sudo bash bash-commands/docker-compose--compose--up.sh . default.docker-compose```).  
+Run the command ```administration--update-configuration``` via VS Code (instead also the terminal command ```sudo bash bash-commands--specific/administration--update-configuration.sh . default.docker-compose reverse-proxy.env```).  
+Open the web browser ```xdg-open http://localhost```, you should see a certificate warning (due to self signed certificate), click on proceed and you should see theia being served under ```https://localhost/non-root/#/home/project```.
+
+The used docker-compose configuration can be found [here](docker-compose/server--nginx-certbot/default.docker-compose).  
+Theia and NGINX are connected via the labeled docker network ```local```, so theia is inaccessible on the system without NGINX.
+The used reverse proxy configuration can be found [here](volumes/proxy/manual-config/localhost.conf).  
+In line 27 you can see ```proxy_pass              http://ide:3000/;```, to get theia being proxied correctly, the trailing slash ```...ide:3000/;``` does the trick, this way the ```/non-root/``` URL part seems to be replaced by ```/```.
+
+Disclaimer: This is only an example, I strongly discourage you from using it in a production scenario. Consider using your own NGINX proxy and theia IDE docker images.
+
 # docker-app: nginx-certbot
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/tag-date/talsen-team/docker-app--nginx-certbot.svg?style=for-the-badge)
