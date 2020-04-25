@@ -32,6 +32,10 @@
 !docker-compose/
 !docker-compose/server--nginx-certbot/
 !docker-compose/server--nginx-certbot/default.docker-compose
+!volumes/
+!volumes/proxy/
+!volumes/proxy/manual-config/
+!volumes/proxy/manual-config/localhost.conf
 !.gitignore
 !.gitmodules
 !container.env
