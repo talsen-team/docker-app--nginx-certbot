@@ -6,7 +6,7 @@ services:
       context:      './../../docker/server--nginx-certbot'
       dockerfile:   'default.docker'
     container_name: 'server--nginx-certbot'
-    image:          'talsenteam/docker-nginx-certbot:v1.17.8-alpine'
+    image:          'talsenteam/docker-nginx-certbot:v1.19.4-alpine'
     network_mode:   'host'
     restart:        'no'
     volumes:
